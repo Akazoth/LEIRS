@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leirs Construction Supplies - Policies</title>
+
+<style>
+:root {
+  --maroon: #7a0c12;
+  --maroon-dark: #5a080c;
+  --gold: #c9a23f;
+  --gold-soft: #e6cf8b;
+  --dark: #1e1e1e;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Montserrat', sans-serif; line-height:1.6; color:var(--dark); background:#fff; transition:opacity 0.5s ease; }
+a { text-decoration:none; color:inherit; }
+header { background:var(--maroon); color:#fff; position:sticky; top:0; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; }
+.logo { font-weight:700; font-size:1.5rem; }
+.logo span { color:var(--gold); }
+nav ul { display:flex; gap:1.5rem; list-style:none; }
+nav ul li a:hover { color:var(--gold-soft); }
+main { padding:4rem 2rem; max-width:1200px; margin:auto; }
+h1,h2,h3 { color:var(--maroon); margin-bottom:1rem; }
+p { margin-bottom:1rem; }
+body.fade-out { opacity:0; }
+body.fade-in { opacity:1; }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', ()=>{
+  document.body.classList.add('fade-in');
+  document.querySelectorAll('a').forEach(link=>{
+    if(link.hostname===window.location.hostname){
+      link.addEventListener('click', e=>{
+        e.preventDefault();
+        document.body.classList.remove('fade-in');
+        document.body.classList.add('fade-out');
+        setTimeout(()=>{window.location=link.href},500);
+      });
+    }
+  });
+});
+</script>
+
+</head>
+<body>
+
+<header>
+  <div class="logo">LEIRS <span>Construction Supplies</span></div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="policies.html">Policies</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="section">
+    <h2>Policies & Terms</h2>
+    <p><strong>Privacy Policy:</strong> We respect your privacy and securely handle all personal information.</p>
+    <p><strong>Terms of Service:</strong> All purchases and services are subject to availability and standard business terms.</p>
+    <p><strong>Disclaimer:</strong> Product specifications may change without prior notice.</p>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 <span>Leirs Construction Supplies</span>. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
