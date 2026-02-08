@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leirs Construction Supplies - Contact Us</title>
+
+<style>
+:root {
+  --maroon: #7a0c12;
+  --maroon-dark: #5a080c;
+  --gold: #c9a23f;
+  --gold-soft: #e6cf8b;
+  --gray: #f4f4f4;
+  --dark: #1e1e1e;
+.logo-main {
+  color: var(--maroon);
+  font-weight: 700;
+}
+
+.logo-sub {
+  color: var(--gold);
+}
+.map-container {
+  width: 100%;
+  max-width: 600px;        /* controls how big it can get */
+  height: 300px;           /* fixed height so it doesn’t explode */
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.map-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* keeps proportions */
+  display: block;
+}
+
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Montserrat', sans-serif; line-height:1.6; color:var(--dark); background:#fff; transition:opacity 0.5s ease; }
+a { text-decoration:none; color:inherit; }
+
+header { background: var(--dark); color: #fff; position: sticky; top:0; z-index:1000; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; }
+.logo { font-size:1.5rem; font-weight:700; display:flex; align-items:center; gap:0.8rem; }
+.logo img { height:40px; width:auto; }
+.logo span { color: var(--gold); }
+
+nav ul { display:flex; gap:1.5rem; list-style:none; font-weight:500; }
+nav ul li a:hover { color: var(--gold-soft); }
+
+/* Hero */
+.hero { background: linear-gradient(rgba(122,12,18,0.85), rgba(122,12,18,0.85)), url('https://images.unsplash.com/photo-1581092580496-2ce08db2f848') center/cover no-repeat; color:#fff; padding:6rem 2rem; text-align:center; }
+.hero h1 { font-size:3rem; font-weight:700; margin-bottom:1rem; }
+.hero img.hero-img { max-width:200px; margin:1.5rem auto; display:block; border-radius:8px; }
+.hero p { max-width:700px; margin:auto; font-size:1.1rem; opacity:0.95; }
+.hero .cta { margin-top:2rem; display:inline-block; padding:0.9rem 2.2rem; background: var(--gold); color: var(--maroon-dark); font-weight:600; border-radius:30px; transition:0.3s ease; }
+.hero .cta:hover { background: var(--gold-soft); transform:translateY(-2px); }
+
+/* Sections */
+section { padding:4.5rem 2rem; }
+.container { max-width:1200px; margin:auto; }
+.section-title { text-align:center; margin-bottom:3rem; }
+.section-title h2 { font-size:2.2rem; color: var(--maroon); margin-bottom:0.5rem; }
+.section-title span { display:block; width:60px; height:4px; background: var(--gold); margin:0.8rem auto 0; }
+
+/* Contact Grid */
+.contact-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem; }
+.contact-info p { margin-bottom:0.6rem; }
+form input, form textarea { width:100%; padding:0.8rem; margin-bottom:1rem; border:1px solid #ccc; font-family:inherit; }
+form button { background: var(--maroon); color:#fff; border:none; padding:0.8rem 1.8rem; font-weight:600; cursor:pointer; }
+form button:hover { background: var(--maroon-dark); }
+
+/* Footer */
+footer { background: var(--maroon-dark); color:#ddd; text-align:center; padding:2rem; font-size:0.9rem; }
+footer span { color: var(--gold); }
+
+/* Transitions */
+body.fade-out { opacity:0; }
+body.fade-in { opacity:1; }
+
+@media(max-width:768px){ .hero h1{ font-size:2.2rem; } }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', ()=>{
+  document.body.classList.add('fade-in');
+  document.querySelectorAll('a').forEach(link=>{
+    if(link.hostname===window.location.hostname){
+      link.addEventListener('click', e=>{
+        e.preventDefault();
+        document.body.classList.remove('fade-in');
+        document.body.classList.add('fade-out');
+        setTimeout(()=>{window.location=link.href},500);
+      });
+    }
+  });
+});
+</script>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+  	<img src="abc.png" alt="Logo">
+ 	<span class="logo-main">LEIRS</span>
+  	<span class="logo-sub">Construction Supplies</span>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="policies.html">Policy</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Get in Touch</h1>
+  <p>We’re here to assist you. Reach out with questions, orders, or requests for quotes.</p>
+</section>
+
+<section class="contact">
+  <div class="container">
+    <div class="section-title"><h2>Contact Information</h2><span></span></div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p><strong>Company:</strong> Leirs Construction Supplies</p>
+        <p><strong>Email:</strong> info@leirsconstructionsupplies.com</p>
+        <p><strong>Phone:</strong> +63 945 471 8845</p>
+        <p><strong>Address:</strong> 71 San Francisco, Novaliches, Quezon City, Metro Manila</p>
+        <div class="map-container">
+ 		<img src="map.png" alt="Map location">
+	</div>
+      </div>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="4" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 <span>Leirs Construction Supplies</span>. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
